@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <body>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Seu Título</title>
+        
+        <P><h2>chat não inteligente</P></h2></P>
+
+    <title>Chatbot</title>
+    
+    <style>
+        
+        body {
+            background-color: #c0c0c0; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 90;
+           
+        }
+
+        #chatbot, .input-container, button {
+            width:400px;
+         
+            margin-bottom: 10px;
+         
+        }
+
+        #chatbot {
+            height: 500px;
+            border: 1px solid #000;
+            overflow-y: scroll;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 15px ;
+        }
+
+        .input-container {
+            display: flex;
+            
+            
+        }
+
+        input[type="text"] {
+            flex-grow: 0;
+            width: 300px;
+            
+            
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 7px;
+                 
+              }
+        </style>
+</head>
+<body>
+
+<div id="chatbot"></div>
+<div class="input-container">
+    <input type="text" id="userInput">
+    <button onclick="sendMessage()">mandar</button>
+</div>
+
+<script>
+function sendMessage() {
+    var userInput = document.getElementById("userInput").value;
+    document.getElementById("chatbot").innerHTML += "<p>Voce: " + userInput + "</p>";
+    document.getElementById("userInput").value = "";
+    
+    setTimeout(function(){
+        var botResponse = "olá! Infelizmente nao sei de nada! nem adianta me pergunta alguma coisa kkk😹";
+        document.getElementById("chatbot").innerHTML += "<p>chat: " + botResponse + "</p>";
+    }, 1000);
+}
+</script>
+
+</body>
+</html>
